@@ -1,0 +1,12 @@
+{
+  "name": "meu-projeto-devops",
+  "version": "1.0.0",
+  "description": "Projeto simples de build e deploy",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Construindo o projeto...' && exit 0",
+    "test": "echo 'Executando testes...' && exit 0"
+  },
+  "author": "Gustavo",
+  "license": "ISC"
+}
