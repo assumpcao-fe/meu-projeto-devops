@@ -22,5 +22,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./workflow  # Diretório onde o index.html está, ajuste se necessário
+        publish_dir: ./workflows  # Diretório onde o index.html está, ajuste se necessário
         publish_branch: gh-pages  # Branch onde será feito o deploy
