@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Aciona o pipeline quando houver push no branch main
+      - main  # O pipeline é acionado quando há push no branch main
 
 jobs:
   deploy:
@@ -16,6 +16,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .  # Diretório raiz onde o index.html está
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # Usa o token de autenticação
+        publish_dir: ./  # Diretório raiz onde o index.html está
         publish_branch: gh-pages  # Branch para onde os arquivos serão movidos
