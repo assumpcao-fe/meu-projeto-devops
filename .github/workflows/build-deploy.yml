@@ -13,6 +13,12 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v3
 
+    # Nova etapa: Verificação de vulnerabilidades com Snyk
+    - name: Run Snyk to check for vulnerabilities
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  # Token Snyk armazenado nos secrets do GitHub
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
