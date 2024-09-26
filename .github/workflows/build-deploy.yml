@@ -1,26 +1,21 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # O pipeline será acionado quando você fizer push no branch main
+      - main  # Aciona o pipeline quando houver push no branch main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out code
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'  # Usar Node.js 20, conforme necessário
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./  # Diretório onde o index.html está, ajuste se necessário
-        publish_branch: gh-pages  # Branch onde será feito o deploy
+        publish_dir: ./  # Diretório raiz onde o index.html está
+        publish_branch: gh-pages  # Branch para onde os arquivos serão movidos
